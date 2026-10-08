@@ -16,16 +16,16 @@ window.handleDelete =function handleDelete(id){
 
 
 window.handleUpdate = function handleUpdate(id){
-    const selectedToDo = updatedToDos.find(obj=>obj.id===id)
+    const selectedToDo = updatedToDos.find(obj=>obj.id==id)
     selectedToDo.done=!selectedToDo.done
-
+    renderToDos(updatedToDos)
 
 }
 
 window.handleAdd = function handleAdd() {
     const newtodo = document.getElementById("newtodo").value
 
-    if(newtodo.trim().length() == 0) return
+    if(newtodo.trim().length == 0) return
 
     const id = Date.now();
     const newitem = {id, name: newtodo, done:false}
